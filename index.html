@@ -1,119 +1,456 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PadmaSrivalli Bathula| Portfolio</title>
+
+    <title>PadmaSrivalli Bathula | Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: #f5f7fa;
-            color: #222;
+            background: #0d1528;
+            color: #f5f7ff;
+            line-height: 1.7;
         }
 
-        header {
-            background: #1f2937;
-            color: white;
-            text-align: center;
-            padding: 70px 20px;
-        }
-
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 20px;
-        }
-
+        /* NAVBAR */
         nav {
-            background: #111827;
-            text-align: center;
-            padding: 15px;
             position: sticky;
             top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background: #0d1528;
+            border-bottom: 1px solid #202b42;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
+        .logo {
+            font-size: 32px;
             font-weight: bold;
         }
 
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 50px 20px;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 30px;
-        }
-
-        .about {
-            text-align: center;
-            max-width: 750px;
-            margin: auto;
-        }
-
-        .skills {
+        nav ul {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
+            list-style: none;
+            gap: 35px;
         }
 
-        .skill {
-            background: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .project {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .project h3 {
-            margin-bottom: 10px;
-        }
-
-        .contact {
-            text-align: center;
-        }
-
-        footer {
-            background: #1f2937;
+        nav ul li a {
             color: white;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #36b9f5;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 8%;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .portfolio-title {
+            color: #36b9f5;
+            letter-spacing: 6px;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #36b9f5;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #36b9f5;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            color: #aebbd2;
+            font-size: 18px;
+            max-width: 700px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #36b9f5;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #36b9f5;
+            color: #07101f;
+        }
+
+        .secondary {
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* PROFILE */
+        .profile {
+            width: 330px;
+            height: 390px;
+            border: 4px solid #36b9f5;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #172036;
+            box-shadow: 0 0 35px rgba(54,185,245,0.25);
+        }
+
+        .profile-text {
             text-align: center;
+            color: #36b9f5;
+            font-size: 18px;
             padding: 20px;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 32px;
+        /* SECTIONS */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            color: #36b9f5;
+        }
+
+        /* ABOUT */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+        }
+
+        .about-text p {
+            color: #aebbd2;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .info-card {
+            background: #172036;
+            border: 1px solid #27334c;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .info-card h3 {
+            color: #36b9f5;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .info-card p {
+            color: #e5e9f2;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #172036;
+            border: 1px solid #27334c;
+            border-radius: 18px;
+            padding: 35px 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #36b9f5;
+        }
+
+        .skill-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            font-size: 20px;
+        }
+
+        /* EDUCATION */
+        .education-card {
+            background: #172036;
+            border: 1px solid #27334c;
+            border-radius: 22px;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .education-card h3 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: #aebbd2;
+            font-size: 18px;
+        }
+
+        .education-year {
+            color: #36b9f5;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* INTERNSHIP */
+        .internship-card {
+            background: #172036;
+            border: 1px solid #27334c;
+            border-radius: 22px;
+            padding: 40px;
+        }
+
+        .internship-card h3 {
+            color: #36b9f5;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .internship-card h4 {
+            font-size: 21px;
+            margin-bottom: 20px;
+        }
+
+        .internship-card p {
+            color: #aebbd2;
+            font-size: 18px;
+        }
+
+        .internship-card ul {
+            margin-top: 20px;
+            padding-left: 25px;
+            color: #c5cede;
+        }
+
+        /* CERTIFICATES */
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .certificate-card {
+            background: #172036;
+            border: 1px solid #27334c;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .certificate-card h3 {
+            color: #36b9f5;
+            margin-bottom: 10px;
+        }
+
+        .certificate-card p {
+            color: #aebbd2;
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #172036;
+            border: 1px solid #27334c;
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #36b9f5;
+        }
+
+        .project-card h3 {
+            color: #36b9f5;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #aebbd2;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            text-align: center;
+            background: #172036;
+            border: 1px solid #27334c;
+            border-radius: 22px;
+            padding: 50px 20px;
+        }
+
+        .contact-box p {
+            color: #aebbd2;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #202b42;
+            color: #8795ad;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 18px 5%;
             }
 
-            nav a {
-                margin: 0 7px;
+            nav ul {
+                gap: 15px;
+            }
+
+            nav ul li a {
                 font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .profile {
+                width: 280px;
+                height: 320px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .education-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .logo {
+                font-size: 24px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            section {
+                padding: 65px 5%;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .certificate-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile {
+                width: 250px;
+                height: 290px;
             }
         }
     </style>
@@ -121,91 +458,363 @@
 
 <body>
 
-    <header>
-        <h1>Your Name</h1>
-        <p>Python Developer | Cloud & DevOps Enthusiast</p>
-    </header>
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">PadmaSrivalli</div>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#internship">Internship</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#internship">Internship</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about">
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-text">
+
+        <div class="portfolio-title">
+            PORTFOLIO • 2026
+        </div>
+
+        <h1>
+            Hi, I'm<br>
+            <span>PadmaSrivalli Bathula</span>
+        </h1>
+
+        <h2>
+            Python Developer • Cloud & DevOps Enthusiast
+        </h2>
+
+        <p>
+            I am passionate about Python development, cloud technologies,
+            and DevOps. I enjoy learning new technologies, improving my
+            technical skills, and building practical projects.
+        </p>
+
+        <div class="buttons">
+            <a href="#contact" class="btn primary">Contact Me</a>
+            <a href="#projects" class="btn secondary">View Projects</a>
+        </div>
+
+    </div>
+
+
+    <div class="profile">
+        <div class="profile-text">
+            <div style="font-size:70px;">👩‍💻</div>
+            <br>
+            PadmaSrivalli Bathula
+            <br>
+            <br>
+            Python • Cloud • DevOps
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <h2 class="section-title">
+        About <span>Me</span>
+    </h2>
+
+    <div class="about-container">
+
+        <div class="about-text">
+
             <p>
-                I am passionate about Python development, cloud technologies,
-                and DevOps. I enjoy learning new technologies and building
-                practical projects.
+                I am PadmaSrivalli Bathula, passionate about Python
+                development, cloud computing, and DevOps technologies.
+            </p>
+
+            <p>
+                I enjoy learning new technologies and applying my
+                knowledge through practical projects. I am continuously
+                working on improving my technical and problem-solving
+                skills.
+            </p>
+
+            <p>
+                My short-term goal is to continuously improve myself,
+                develop stronger technical skills, and gain practical
+                industry experience.
+            </p>
+
+            <p>
+                My long-term goal is to build a successful career in
+                technology and establish myself as a skilled professional.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <div class="info-card">
+                <h3>Strength</h3>
+                <p> Communication</p>
+                <p>Time Management</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Hobby</h3>
+                <p>Cooking</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Goal</h3>
+                <p>Continuous learning and professional growth</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+    <h2 class="section-title">
+        Skills <span>I Know</span>
+    </h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="skill-icon">🐍</div>
+            <h3>Python</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🗄️</div>
+            <h3>SQL</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">☁️</div>
+            <h3>AWS</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">☁️</div>
+            <h3>Cloud Computing</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">⚙️</div>
+            <h3>DevOps</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🐧</div>
+            <h3>Linux</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🔗</div>
+            <h3>Git & GitHub</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h3>HTML & CSS</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+
+    <h2 class="section-title">
+        <span>Education</span>
+    </h2>
+
+    <div class="education-card">
+
+        <div>
+            <h3>B.Tech</h3>
+
+            <p>
+                Computer Science and Engineering
+            </p>
+
+            <p>
+                Andhra Pradesh, India
             </p>
         </div>
-    </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-
-        <div class="skills">
-            <div class="skill">Python</div>
-            <div class="skill">SQL</div>
-            <div class="skill">AWS</div>
-            <div class="skill">Cloud Computing</div>
-            <div class="skill">DevOps</div>
-            <div class="skill">Linux</div>
-            <div class="skill">Git & GitHub</div>
-            <div class="skill">HTML & CSS</div>
+        <div class="education-year">
+            2024-2027
         </div>
-    </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
+    </div>
 
-        <div class="project">
-            <h3>EC2-Based Web Server</h3>
+</section>
+
+
+<!-- INTERNSHIP -->
+<section id="internship">
+
+    <h2 class="section-title">
+        My <span>Internship</span>
+    </h2>
+
+    <div class="internship-card">
+
+        <h3>Cloud Infrastructure and DevOps Engineer</h3>
+
+        <h4>Internship</h4>
+
+        <p>
+            Completed an internship focused on cloud infrastructure,
+            AWS services, server deployment, and DevOps practices.
+        </p>
+
+        <ul>
+            <li>AWS EC2 instance deployment</li>
+            <li>Web server configuration using Apache</li>
+            <li>VPC and networking concepts</li>
+            <li>Launch Template configuration</li>
+            <li>Auto Scaling Group implementation</li>
+            <li>High availability concepts</li>
+            <li>Monitoring and CPU load testing</li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+
+    <h2 class="section-title">
+        My <span>Certificates</span>
+    </h2>
+
+    <div class="certificate-grid">
+
+        <div class="certificate-card">
+            <h3>Python</h3>
             <p>
-                Built and configured a web server using AWS EC2.
-                Worked with VPC, Apache, Launch Templates, Auto Scaling,
-                and high availability concepts.
+                Certificate in Python programming and development.
             </p>
         </div>
 
-        <div class="project">
+        <div class="certificate-card">
+            <h3>Generative AI</h3>
+            <p>
+                Certificate in Generative AI concepts and applications.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+    <h2 class="section-title">
+        My <span>Projects</span>
+    </h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+
+            <h3>EC2 Based Web Server</h3>
+
+            <p>
+                Deployed and configured a web server using AWS EC2,
+                Apache, VPC networking, and Linux.
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>High Availability & Auto Scaling</h3>
+
+            <p>
+                Implemented AWS Launch Templates and Auto Scaling Groups
+                to improve application availability and scalability.
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
             <h3>Python Projects</h3>
+
             <p>
-                Developing Python programs and applications to improve
-                programming and problem-solving skills.
+                Developed Python programs to practice programming,
+                problem solving, and logical thinking.
             </p>
+
         </div>
-    </section>
 
-    <section id="internship">
-        <h2>Internship</h2>
+    </div>
 
-        <div class="project">
-            <h3>Cloud Infrastructure & DevOps Engineer</h3>
-            <p>
-                Gained practical experience with cloud infrastructure,
-                AWS services, web servers, Auto Scaling, and DevOps concepts.
-            </p>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <h2 class="section-title">
+        Contact <span>Me</span>
+    </h2>
+
+    <div class="contact-box">
+
+        <p>
+            Interested in connecting with me? Feel free to reach out.
+        </p>
+
+        <div class="contact-links">
+
+            <a href= "mailto:padmasrivallibattula.com" class="btn primary">
+                Email Me
+            </a>
+
+            <a href="https://github.com/padmasrivallibattula-cmd"
+               target="_blank"
+               class="btn secondary">
+                GitHub
+            </a>
+
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
+    </div>
 
-        <div class="contact">
-            <p>Email: padmasrivallibattula@gmail.com</p>
-            <p>GitHub: github.com/padmasrivallibattula-cmd</p>
-            <p>LinkedIn: www.linkedin.com/in/padmasrivalli-battula-629b16316</p>
-        </div>
-    </section>
+</section>
 
-    <footer>
-        <p>© 2026 PadmaSrivalli Bathula. All Rights Reserved.</p>
-    </footer>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 PadmaSrivalli Bathula | Portfolio
+    </p>
+
+</footer>
 
 </body>
 </html>
