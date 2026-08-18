@@ -406,19 +406,53 @@
             color: #38bdf8;
             font-weight: bold;
         }
-        /*==========================
-          certification
-         ========================= */
-      #certification{
-          background: #101a30;
-      }
-        .certification-card {
-            background: #172137;
-            border: 1px solid #263653;
-            border-radius: 20px;
-            padding: 35px;
-            transition: 0.3s;
-        }
+        
+     /* =========================
+   CERTIFICATIONS
+========================= */
+
+#certificates {
+    background: #101a30;
+}
+
+.certificates-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.certificates-card {
+    background: #172137;
+    border: 1px solid #263653;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.certificates-card:hover {
+    transform: translateY(-7px);
+    border-color: #38bdf8;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+}
+
+.certificates-card h3 {
+    color: #38bdf8;
+    font-size: 15px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .certificates-container {
+        grid-template-columns: 1fr;
+    }
+
+}
 
         
         /* =========================
@@ -434,7 +468,7 @@
             max-width: 700px;
             margin: auto;
             color: #b8c7df;
-            font-size: 18px;
+            font-size: 15px;
         }
 
         /* =========================
@@ -599,7 +633,9 @@
                 <li>
                     <a href="#projects">Projects</a>
                 </li>
-
+                <li>
+                    <a href = "#certificates">Certificates</a>
+                 </li>
                 <li>
                     <a href="#contact">Contact</a>
                 </li>
@@ -715,19 +751,6 @@
                 <div class="info-card">
 
                     <h3>
-                        Hobby
-                    </h3>
-
-                    <p>
-                        Cooking
-                    </p>
-
-                </div>
-
-
-                <div class="info-card">
-
-                    <h3>
                         Goal
                     </h3>
 
@@ -737,7 +760,6 @@
 
                 </div>
 
-            </div>
 
         </div>
 
@@ -782,11 +804,6 @@
             </div>
 
             <div class="skill-card">
-                <i class="fa-brands fa-linux"></i>
-                <h3>Linux</h3>
-            </div>
-
-            <div class="skill-card">
                 <i class="fa-brands fa-git-alt"></i>
                 <h3>Git & GitHub</h3>
             </div>
@@ -799,7 +816,6 @@
         </div>
 
     </section>
-
 
     <!-- =========================
          EDUCATION
@@ -836,7 +852,6 @@
         </div>
 
     </section>
-
 
     <!-- =========================
          INTERNSHIP
@@ -930,7 +945,6 @@
 
 
             </div>
-            </div>
 
         </div>
 
@@ -939,28 +953,32 @@
     <!---===========
        certification
     =================== -->
-    <section id="certifications">
 
-        <h2 class="section-title">
-            certifications
-        </h2>
+<!-- CERTIFICATIONS -->
 
-        <div class="projects-container">
+<section id="certificates">
 
-            <div class="certification -card">
+    <h2 class="section-title">
+        Certificates
+    </h2>
 
-                <h3>
-                    Python
-                </h3>
-                <p>Python Essentials 1 certified by Cisco</p>
-                <p>Python Essentials 2 certified by Cisco</p>
-            </div>
-            <div class ="certification -card">
-                <h3> Generative AI</h3>
-                <p> Generative AI professional certified by oracle</p>
-            </div>
+    <div class="certificates-container">
 
+        <div class="certificates-card">
+            <h3>Python certification</h3>
+            <p>Python Essentials 1 certified by CISCO</p>
+            <p> Python Essentials 2 certified by CISCO</p>
         </div>
+
+        <div class="certificates-card">
+            <h3>Generative AI Certification</h3>
+            <p> Generative AI professional certified by ORACLE</p>
+        </div>
+
+    </div>
+
+</section>
+    
     <!-- =========================
          CONTACT
     ========================= -->
